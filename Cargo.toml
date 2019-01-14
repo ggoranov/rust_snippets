@@ -1,0 +1,12 @@
+[package]
+name = "rust_snippets"
+version = "0.1.0"
+authors = ["Georgi Goranov <georgi.goranov3@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+crossbeam-channel = "0.3"
+
+[[bin]]
+name = "threading"
+path = "src/snippets/threading.rs"
