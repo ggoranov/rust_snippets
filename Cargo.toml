@@ -10,3 +10,7 @@ crossbeam-channel = "0.3"
 [[bin]]
 name = "threading"
 path = "src/snippets/threading.rs"
+
+[[bin]]
+name = "generics"
+path = "src/snippets/generics.rs"

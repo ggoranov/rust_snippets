@@ -6,6 +6,9 @@ use std::thread;
 
 extern crate crossbeam_channel;
 
+///cargo build --bin threading
+///
+///
 /// Code snippets for dealing with threads in Rust
 /// Most of them are slightly modified version of
 /// documentation samples.
@@ -150,7 +153,7 @@ fn main() {
             })
             .unwrap();
 
-        // if v1 size is bigger than (20 * 1024) , as expected we get this err:
+        // if v1 size is bigger than (32 * 1024) , as expected we get this err:
         //
         // thread 'MyThread2' has overflowed its stack
         // fatal runtime error: stack overflow
@@ -212,7 +215,7 @@ fn main() {
         s.send("Hello, world!").unwrap();
 
         // Receive the message from the channel.
-        assert_eq!(r.recv(), Ok("Hello2, world!"));
+        assert_eq!(r.recv(), Ok("Hello, world!"));
     }
 
     // crossbeam_channel
