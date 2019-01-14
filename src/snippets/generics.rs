@@ -21,7 +21,6 @@ fn find_min_max<T: Copy + Ord + Clone>(data: Vec<T>) -> (Option<T>, Option<T>) {
 
     for elem in it {
         if elem < min {
-            // TODO: Cloned or borrowed
             min = elem;
         }
 
