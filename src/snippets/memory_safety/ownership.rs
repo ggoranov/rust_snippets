@@ -7,7 +7,6 @@ fn main() {
     let v2 = vec![3, 4, 5];
 
     /*
-
     stack memory:
     v1
         heap_mem address
@@ -20,8 +19,6 @@ fn main() {
         1
         2
         3
-
-
     */
 
     foo(v1, v2);

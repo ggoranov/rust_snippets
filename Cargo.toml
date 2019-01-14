@@ -14,3 +14,8 @@ path = "src/snippets/threading.rs"
 [[bin]]
 name = "generics"
 path = "src/snippets/generics.rs"
+
+[[bin]]
+name = "borrowing"
+path = "src/snippets/memory_safety/borrowing.rs"
+

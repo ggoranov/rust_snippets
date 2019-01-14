@@ -53,6 +53,8 @@ fn main() {
 
     foo_3();
 
+    foo_4();
+
     /// Cannot use them more: already moved
     print!("{:?}", v1);
 }
@@ -93,25 +95,16 @@ fn foo_3() {
 }
 
 fn foo_4() {
+    print!("\n ========= foo_4 ========= \n");
     {
+        // Edition: 2018. A bit different with 2015
         let y: &i32;
         {
             let x = 5;
-            // y = &x;
-            //     ^ borrowed value does not live long enough
+            y = &x;
         } //  - `x` dropped here while still borrowed
 
         // println!("{}", y);
         //             ^ borrow of possibly uninitialized variable: `y`
-    }
-
-    // Resources within the same scope
-    // are freed in the opposite order they were declared
-    {
-        let y: &i32;
-        let x = 5;
-        y = &x;
-
-        println!("{}", y);
     }
 }
