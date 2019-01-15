@@ -1,8 +1,9 @@
-// Move ownership is used so that only v1 (data_pointer, length val and capacity val) are only
-// copied to the caller stack frame but the allocated heap memory is not duplicated.
+// Move ownership is used so that only v1 (data_pointer, length value and capacity value)
+// are copied to the caller stack frame
+//but the allocated 1MB heap memory is not copied.
 #[allow(dead_code)]
-fn allocate_vec_heap_memory() -> (Vec<u32>, String) {
-    let mut v1 = vec![0u32; 1024 * 1024];
+fn allocate_vec_heap_memory() -> (Vec<u8>, String) {
+    let mut v1 = vec![0u8; 1024 * 1024];
     let addr_as_str = format!("{:?}", v1.as_mut_ptr());
     (v1, addr_as_str)
 }
@@ -14,7 +15,7 @@ fn read_vec_heap_memory() {
         let moved_addr_as_str = format!("{:?}", v2.as_mut_ptr());
         assert_eq!(moved_addr_as_str, addr_as_str);
     } // v2 is getting out of scope as a result allocated heap
-      // is freed and no mem leak occurs.
+      // is freed and no memory leak occurs.
 }
 #[test]
 fn test_dynamic_memory() {
