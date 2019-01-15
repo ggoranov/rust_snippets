@@ -1,4 +1,4 @@
-// This struct needs to keep a immuatable reference to i32 value
+// This struct needs to keep an immuatable reference to i32 value
 // During the lifetime of an instance of I32Wrapper we need to ensure that
 // the reference it points at will also be 'alive' otherwise we can have
 // a dangling pointer "use after free".
@@ -9,6 +9,8 @@ struct I32Wrapper<'a> {
     x: &'a i32,
 }
 
+// An example where we force a restriction that any passed immutable reference must be
+// alive as much as an instance of I32Wrapper
 impl<'a> I32Wrapper<'a> {
     fn set_value(&mut self, y: &'a i32) {
         self.x = y;
