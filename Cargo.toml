@@ -19,3 +19,7 @@ path = "src/snippets/generics.rs"
 name = "borrowing"
 path = "src/snippets/memory_safety/borrowing.rs"
 
+[[bin]]
+name = "ownership"
+path = "src/snippets/memory_safety/ownership.rs"
+
